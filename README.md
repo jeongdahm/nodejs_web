@@ -14,7 +14,7 @@
 
 ### Tools
 
-Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)
- ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org))   
-
-Nodeclipse is free open-source project that grows with your contributions.
+node.js express모듈을 이용한 CRUD연습. 
+(html를 ejs로 렌더링)
+DB mysql
+CSS 부트스트랩 
