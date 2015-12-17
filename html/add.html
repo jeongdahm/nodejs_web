@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Express HTML</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/books">node.js로 웹페이지 만들기</a>
+
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+      <h2><%= title %></h2>
+    </div>
+    
+   <form name="add_frm" method="post" > 
+    <table class="table table-bordered">
+    <tbody>
+	    	<tr>
+	    		<td>이름:</td><td><input type="text" name="name"></td>
+	    	</tr>
+	    	<tr>
+	    		<td>출판사:</td><td><input type="text" name="memo"></td>
+	    	</tr>
+	    	<tr>
+	    		<td>가격:</td><td><input type="text" name="price"></td>
+	    	</tr>
+    	</a>
+    
+    </tbody>
+    
+    </table>
+    </form>
+    <button type="button" class=" btn btn-danger " onclick="go_add('');">입력</button>
+                               
+    
+  </div>
+  <script>
+  function go_add(){
+	  document.add_frm.action='/books/add';
+	  add_frm.submit();
+  }
+  </script>
+</body>
+</html>

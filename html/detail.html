@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Express HTML</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/books">node.js로 웹페이지 만들기</a>
+
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+      <h2><%= title %></h2>
+    </div>
+    
+    <form name="update_frm" method="post" >
+    <table class="table table-bordered">
+    <tbody>
+	    	<tr>
+	    		<td>이름:</td><td><input type="text" name="name" value="<%= book[0].name %>"</td>
+	    	</tr>
+	    	<tr>
+	    		<td>출판사:</td><td><span><input type="text" name="memo" value="<%= book[0].memo %>"</span></td>
+	    	</tr>
+	    	<tr>
+	    		<td>가격:</td><td><span><input type="text" name="price" value="<%= book[0].price %>"</span></td>
+	    	</tr>
+    	</a>
+    
+    </tbody>
+    
+    </table>
+    <input type="hidden" name="cd" >
+    </form>
+    
+    <button type="button" class=" btn btn-danger " onclick="go_del('<%= book[0].cd %>');">삭제</button>
+    <button type="button" class=" btn btn-warning " onclick="go_update('<%= book[0].cd %>');" style="float:right;">수정</button>
+                               
+    <form name="del_frm" method="post" >
+    <input type="hidden" name="cd" >
+    <input type="hidden" name="_method"  value="delete">
+    </form>
+    
+  </div>
+  <script>
+  function go_del(cd){
+	  document.del_frm.action="/books/"+cd;
+	  document.del_frm.cd.value=cd;
+	  del_frm.submit();
+  }
+  function go_update(cd){
+	  document.update_frm.action="/books/update";
+	  document.update_frm.cd.value=cd;
+	  update_frm.submit();
+  }
+  </script>
+</body>
+</html>

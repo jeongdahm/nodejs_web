@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Express HTML</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/books">node.js로 웹페이지 만들기</a>
+
+  </div>
+</nav>
+    <div class="jumbotron"  style="padding:40px;">
+      <h2><%= title %></h2>
+    </div>
+    
+    
+    <table class="table table-bordered">
+    <thead>
+    <th colspan="2">도서목록</th> 
+    </thead>
+    <tbody>
+    
+     <% for (var i = 0 ; i < books.length ; i++){ %>
+     
+    	<tr onclick="location.replace('/books/<%= books[i].cd %>' );" style="cursor:pointer">
+    		<td><span>(<%= books[i].cd %>)</span></td><td><span><%= books[i].name %></span></td>
+    	</tr>
+    	
+    <% }%>
+    </tbody>
+    
+    </table>
+    <button type="button" class=" btn btn-success " onclick="location.replace('/books/add');">추가</button>
+     
+  </div>
+</body>
+</html>
